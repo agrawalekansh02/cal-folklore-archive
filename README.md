@@ -2,11 +2,6 @@
 
 `Docker` file for `Omega` + `PHP` + `MariaDB`
 
-## Omega-S
-
-- loading omega-s into docker container
-    - [dockerization](dockerization.md)
-
 ## Running Omega
 
 starting container

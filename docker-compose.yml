@@ -7,14 +7,15 @@ services:
     networks:
       - network1 
     volumes:
-      - mariadb:/var/lib/mysql
+      - ./data:/var/lib/mysql
+      - ./database.ini:/var/www/html/config/database.ini
     environment:
       MYSQL_ROOT_PASSWORD: omeka 
       MYSQL_DATABASE: omeka
       MYSQL_USER: omeka
       MYSQL_PASSWORD: omeka
 
-  pma:
+  phpmyadmin:
     depends_on:
       - mariadb
     image: phpmyadmin/phpmyadmin:latest
@@ -38,7 +39,8 @@ services:
     links:
       - mariadb:db
     volumes:
-      - omeka:/var/www/html/volume
+      - ./omeka:/var/www/html/volume
+      - ./media:/var/www/html/files
 
 volumes:
   mariadb:

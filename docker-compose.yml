@@ -8,7 +8,7 @@ services:
       - network1 
     volumes:
       - ./data:/var/lib/mysql
-      - ./database.ini:/var/www/html/config/database.ini
+      - ./config:/var/www/html/config
     environment:
       MYSQL_ROOT_PASSWORD: omeka 
       MYSQL_DATABASE: omeka
